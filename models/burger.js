@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const { handleMongooseError } = require("../helpers");
 const Joi = require("joi");
 
-const contactSchema = new Schema(
+const burgerSchema = new Schema(
   {
     category: {
       type: String,
@@ -28,7 +28,7 @@ const contactSchema = new Schema(
   }
 );
 
-contactSchema.post("save", handleMongooseError);
+burgerSchema.post("save", handleMongooseError);
 
 const addSchema = Joi.object({
   category: Joi.string().required(),
