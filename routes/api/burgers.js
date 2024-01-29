@@ -10,13 +10,13 @@ const {
   updateById,
 } = require("../../controllers/burgers");
 
-router.get("/", authenticate, getAll);
+router.get("/", getAll);
 
-router.get("/:id", authenticate, isValidId, getById);
+router.get("/:id", isValidId, getById);
 
-router.post("/", authenticate, validateBody(schemas.addSchema), add);
+router.post("/", validateBody(schemas.addSchema), add);
 
-router.delete("/:id", authenticate, isValidId, deleteById);
+router.delete("/:id", isValidId, deleteById);
 
 router.put("/:id", isValidId, validateBody(schemas.addSchema), updateById);
 
