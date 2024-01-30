@@ -21,7 +21,7 @@ const addSchema = Joi.object({
   contents: Joi.array().required(),
 });
 
-const Order = model("orderer", orderSchema);
+const Order = model("order", orderSchema);
 
 const schemas = {
   addSchema,
